@@ -5,6 +5,7 @@ const int led2 = 12;
 const int led3 = 11;
 const int led4 = 10;
 
+
 // a função setup roda somente uma vez, ao ligar o arduino ou reset
 void setup() {
   // configura o led interno como saida.]
@@ -18,27 +19,28 @@ void setup() {
 
 // função "loop" == função "while(true)"-(python)
 void loop() {
-
-  vari1 = digitalRead(bot1);
+ int vari2 = digitalRead(bot2);
+ int vari1 = digitalRead(bot1);
   if (vari1 == HIGH){
-    while(vari1 == HIGH){
-      
+    while(vari2 == LOW){
+      vari2 = digitalRead(bot2);
       digitalWrite(led1, HIGH);
-      delay(250);
+      delay(150);
       digitalWrite(led1, LOW);
       digitalWrite(led2, HIGH);
-      delay(250);
+      delay(150);
       digitalWrite(led2, LOW);
       digitalWrite(led3, HIGH);
-      delay(250);
+      delay(150);
       digitalWrite(led3, LOW);
       digitalWrite(led4, HIGH);
-      delay(250);
+      delay(150);
       digitalWrite(led4, LOW);
 
 
     }
-  }  
+  }
+  else   digitalWrite(led4, LOW);
 }
 
 
